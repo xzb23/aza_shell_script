@@ -7,7 +7,7 @@ echo "
 read -p "Y/n: " flag
 if [ -z "$flag" ]; then
 	echo "===Start==="
-elif [ "$(tr [:upper:] [:lower:]) \"$flag\"" == "y" ]; then
+elif [ "$(printf "%s" \"$flag\" | tr [:upper:] [:lower:])" == "y" ]; then
 	echo "===Start==="
 else
 	exit 0
